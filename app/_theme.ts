@@ -1,6 +1,5 @@
-import * as React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';import { green, brown } from '@mui/material/colors';
+import { green, brown } from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -67,17 +66,21 @@ const appleSDGothicNeoR = {
 };
 
 const theme = createTheme({
-  cssVariables: true,
-  colorSchemes: {
-    light: true,
-    dark: true,
+  breakpoints: {
+    values: {
+      xs: 3000,
+      sm: 3000,
+      md: 3000,
+      lg: 3000,
+      xl: 3000,
+    },
   },
   typography: {
     appleSDGothicNeoEB,
     appleSDGothicNeoB,
     appleSDGothicNeoM,
     appleSDGothicNeoR,
-  },  
+  },
   components: {
     MuiAlert: {
       styleOverrides: {
@@ -93,18 +96,15 @@ const theme = createTheme({
         },
       },
     },
-  }
+  },
+  palette: {
+    primary: {
+      main: green[900],
+    },
+    secondary: {
+      main: brown[600],
+    },
+  },
 });
 
-interface AppThemeProps {
-  children: React.ReactNode;
-}
-
-export default function AppTheme({ children }: AppThemeProps) {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  );
-}
+export default theme;
