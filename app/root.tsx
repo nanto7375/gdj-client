@@ -7,11 +7,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'react-router';
-import { CacheProvider } from '@emotion/react';
-import Box from '@mui/material/Box';
-import AppTheme from './theme';
-import createEmotionCache from './createCache';
 
+import { CacheProvider } from '@emotion/react';
+import QueryProvider from './providers/query-client';
+import { ToastProvider } from './providers/toast-provider';
+import AppTheme from './theme';
+
+import createEmotionCache from './create-cache';
+import Box from '@mui/material/Box';
 import type { Route } from './+types/root';
 
 export const links: Route.LinksFunction = () => [
@@ -37,7 +40,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <QueryProvider> 
+            {children}
+        </QueryProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -52,14 +57,18 @@ export default function App() {
     return (
       <CacheProvider value={cache}>
         <AppTheme>
-          <Outlet />
+          <ToastProvider>
+            <Outlet />
+          </ToastProvider>
         </AppTheme>
       </CacheProvider>
     );
   }
   return (
     <AppTheme>
-      <Outlet />
+      <ToastProvider>
+        <Outlet />
+      </ToastProvider>
     </AppTheme>
   );
 }

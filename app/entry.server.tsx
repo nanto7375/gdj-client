@@ -8,7 +8,7 @@ import { createReadableStreamFromReadable } from '@react-router/node';
 import { isbot } from 'isbot';
 import createEmotionServer from '@emotion/server/create-instance';
 import { CacheProvider } from '@emotion/react';
-import createEmotionCache from './createCache';
+import createEmotionCache from './create-cache';
 
 export const streamTimeout = 5_000;
 
