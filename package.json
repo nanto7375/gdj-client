@@ -1,0 +1,41 @@
+{
+  "name": "material-ui-react-router-ts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "^7.3.7",
+    "@mui/material": "latest",
+    "@mui/system": "^7.3.7",
+    "@react-router/node": "latest",
+    "@react-router/serve": "latest",
+    "@tanstack/react-query": "^5.90.17",
+    "isbot": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@react-router/dev": "latest",
+    "@tanstack/eslint-plugin-query": "^5.91.2",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest"
+  }
+}
